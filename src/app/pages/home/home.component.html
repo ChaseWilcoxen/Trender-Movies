@@ -1,5 +1,6 @@
 
 <div class="container-fluid">
+    <div>You have 20 clicks forward or backward to select a moive. </div>
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"*ngFor="let result of trenderResults; let i = index"></button>
@@ -10,7 +11,7 @@
            [ngClass]="{active: i === 1}">
             <img src="https://image.tmdb.org/t/p/original/{{ result.backdrop_path }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h1>{{ result.title }}</h1>
+              <h1>{{ result.title || result.name }}</h1>
                 <div>
                     <h2>
                         {{ result.vote_average }}
